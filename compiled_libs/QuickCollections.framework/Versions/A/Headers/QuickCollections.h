@@ -9,3 +9,4 @@
 #import <Foundation/Foundation.h>
 #import "QuickImageContainer.h"
 #import "NSImageContainerDictionary.h"
+#import "NSMappedDictionary.h"

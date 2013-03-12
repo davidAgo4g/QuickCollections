@@ -11,6 +11,16 @@
 #import <Foundation/Foundation.h>
 #import <libkern/OSAtomic.h>
 
+typedef struct _GSImagePixelData {
+    
+    uint8_t    *_bytes;
+    size_t      _width;
+    size_t      _height;
+    size_t      _bytesPerRow;
+    unsigned    _info;
+    
+} _GSImagePixelData;
+
 @interface QuickImageContainer : NSObject  <NSCoding>
 
 -(void)setImage:(UIImage *)anImage;

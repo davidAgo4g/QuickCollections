@@ -25,6 +25,8 @@
 /* Begin PBXBuildFile section */
 		6B39DCC916DE88E300AE2A0A /* QuickCollections.h in Headers */ = {isa = PBXBuildFile; fileRef = 6BA2666316D4310E0065CA95 /* QuickCollections.h */; };
 		6B39DCCB16DE88EB00AE2A0A /* QuickImageContainer.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6BA8BFB816DE74F600056358 /* QuickImageContainer.h */; };
+		6B8828CA16EE893100A4F5AA /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B8828C916EE893100A4F5AA /* libc++.dylib */; };
+		6B980C1616EE85DA00F7DE7F /* NSMappedDictionary.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6BC5402C16EE796000A9664B /* NSMappedDictionary.h */; };
 		6BA0835916DE95D600927B3F /* NSImageContainerDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BA0835716DE95D600927B3F /* NSImageContainerDictionary.m */; };
 		6BA0835C16DE964200927B3F /* NSImageContainerDictionary.h in Headers */ = {isa = PBXBuildFile; fileRef = 6BA0835B16DE964200927B3F /* NSImageContainerDictionary.h */; };
 		6BA0835D16DE964200927B3F /* NSImageContainerDictionary.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6BA0835B16DE964200927B3F /* NSImageContainerDictionary.h */; };
@@ -34,6 +36,8 @@
 		6BA8BFBE16DE78DD00056358 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BA8BFBC16DE78DD00056358 /* CoreGraphics.framework */; };
 		6BA8BFBF16DE78DD00056358 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BA8BFBD16DE78DD00056358 /* UIKit.framework */; };
 		6BC2A9F016E3C995003EAD4D /* QuickImageContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BC2A9EF16E3C995003EAD4D /* QuickImageContainer.m */; };
+		6BC5402E16EE796000A9664B /* NSMappedDictionary.h in Headers */ = {isa = PBXBuildFile; fileRef = 6BC5402C16EE796000A9664B /* NSMappedDictionary.h */; };
+		6BC5402F16EE796000A9664B /* NSMappedDictionary.mm in Sources */ = {isa = PBXBuildFile; fileRef = 6BC5402D16EE796000A9664B /* NSMappedDictionary.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -43,6 +47,7 @@
 			dstPath = "${BUILD_DIR}/${CONFIGURATION}-iphoneuniversal/${PRODUCT_NAME}.framework/Versions/A/Headers/";
 			dstSubfolderSpec = 0;
 			files = (
+				6B980C1616EE85DA00F7DE7F /* NSMappedDictionary.h in CopyFiles */,
 				6B39DCCB16DE88EB00AE2A0A /* QuickImageContainer.h in CopyFiles */,
 				6BA2668516D433A60065CA95 /* QuickCollections.h in CopyFiles */,
 				6BA0835D16DE964200927B3F /* NSImageContainerDictionary.h in CopyFiles */,
@@ -52,6 +57,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		6B8828C916EE893100A4F5AA /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
 		6BA0835716DE95D600927B3F /* NSImageContainerDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSImageContainerDictionary.m; sourceTree = "<group>"; };
 		6BA0835B16DE964200927B3F /* NSImageContainerDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSImageContainerDictionary.h; sourceTree = "<group>"; };
 		6BA2665B16D4310E0065CA95 /* libQuickCollections.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libQuickCollections.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -62,6 +68,9 @@
 		6BA8BFBC16DE78DD00056358 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		6BA8BFBD16DE78DD00056358 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		6BC2A9EF16E3C995003EAD4D /* QuickImageContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuickImageContainer.m; sourceTree = "<group>"; };
+		6BC5402C16EE796000A9664B /* NSMappedDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSMappedDictionary.h; sourceTree = "<group>"; };
+		6BC5402D16EE796000A9664B /* NSMappedDictionary.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = NSMappedDictionary.mm; sourceTree = "<group>"; };
+		6BC5403116EE79CA00A9664B /* NSMap.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = NSMap.mm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6B8828CA16EE893100A4F5AA /* libc++.dylib in Frameworks */,
 				6BA8BFBE16DE78DD00056358 /* CoreGraphics.framework in Frameworks */,
 				6BA8BFBF16DE78DD00056358 /* UIKit.framework in Frameworks */,
 				6BA2665F16D4310E0065CA95 /* Foundation.framework in Frameworks */,
@@ -81,9 +91,11 @@
 		6BA2665016D4310E0065CA95 = {
 			isa = PBXGroup;
 			children = (
+				6B8828C916EE893100A4F5AA /* libc++.dylib */,
 				6BA2666016D4310E0065CA95 /* QuickCollections */,
 				6BA2665D16D4310E0065CA95 /* Frameworks */,
 				6BA2665C16D4310E0065CA95 /* Products */,
+				6BA2666116D4310E0065CA95 /* Supporting Files */,
 			);
 			sourceTree = "<group>";
 		};
@@ -113,7 +125,9 @@
 				6BC2A9EF16E3C995003EAD4D /* QuickImageContainer.m */,
 				6BA0835B16DE964200927B3F /* NSImageContainerDictionary.h */,
 				6BA0835716DE95D600927B3F /* NSImageContainerDictionary.m */,
-				6BA2666116D4310E0065CA95 /* Supporting Files */,
+				6BC5402C16EE796000A9664B /* NSMappedDictionary.h */,
+				6BC5402D16EE796000A9664B /* NSMappedDictionary.mm */,
+				6BC5403116EE79CA00A9664B /* NSMap.mm */,
 			);
 			path = QuickCollections;
 			sourceTree = "<group>";
@@ -124,6 +138,7 @@
 				6BA2666216D4310E0065CA95 /* QuickCollections-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			path = QuickCollections;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -136,6 +151,7 @@
 				6B39DCC916DE88E300AE2A0A /* QuickCollections.h in Headers */,
 				6BA8BFBA16DE74F600056358 /* QuickImageContainer.h in Headers */,
 				6BA0835C16DE964200927B3F /* NSImageContainerDictionary.h in Headers */,
+				6BC5402E16EE796000A9664B /* NSMappedDictionary.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -223,6 +239,7 @@
 			files = (
 				6BA0835916DE95D600927B3F /* NSImageContainerDictionary.m in Sources */,
 				6BC2A9F016E3C995003EAD4D /* QuickImageContainer.m in Sources */,
+				6BC5402F16EE796000A9664B /* NSMappedDictionary.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -277,10 +294,13 @@
 					i386,
 					armv6,
 				);
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libstdc++";
 				DSTROOT = /tmp/QuickCollections.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "QuickCollections/QuickCollections-Prefix.pch";
 				GCC_THUMB_SUPPORT = NO;
+				HEADER_SEARCH_PATHS = "";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -295,10 +315,13 @@
 					i386,
 					armv6,
 				);
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libstdc++";
 				DSTROOT = /tmp/QuickCollections.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "QuickCollections/QuickCollections-Prefix.pch";
 				GCC_THUMB_SUPPORT = NO;
+				HEADER_SEARCH_PATHS = "";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;

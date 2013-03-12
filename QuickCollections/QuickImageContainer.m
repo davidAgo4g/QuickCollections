@@ -16,16 +16,6 @@ static NSString* const kImageInfoKey = @"kImageInfoKey";
 static NSString* const kImageBytesPerRowKey = @"kImageBytesPerRowKey";
 static NSString* const kImageBytesKey = @"kImageBytesKey";
 
-typedef struct _GSImagePixelData {
-
-    uint8_t    *_bytes;
-    size_t      _width;
-    size_t      _height;
-    size_t      _bytesPerRow;
-    unsigned    _info;
-
-} _GSImagePixelData;
-
 // private - class extension
 
 @interface QuickImageContainer ()   {
