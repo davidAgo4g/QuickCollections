@@ -59,7 +59,8 @@ Assuming that you want to save a "QuickImageContainer" file, you can do it as fo
 		return [paths objectAtIndex:0];
 	}
 	
-However, you can take advantage of NSKeyedArchiver / NSKeyedUnarchiver to save to a file and get back a QuickImageContainer object:
+By this way you have stored 10-20 bytes to file, which is much less than 1 KB. However, you can take advantage
+ of NSKeyedArchiver / NSKeyedUnarchiver to save to a file and get back a QuickImageContainer object:
 
     -(void)viewDidLoad  {
 	    [super viewDidLoad];
