@@ -37,7 +37,7 @@
 }
 
 -(id)objectForKey:(id)aKey  {
-    return _dictionary->get((void const *)aKey);
+    return _dictionary->get((void const*)aKey);
 }
 
 - (void)removeAllObjects  {

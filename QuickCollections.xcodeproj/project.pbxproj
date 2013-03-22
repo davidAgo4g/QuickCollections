@@ -27,9 +27,9 @@
 		6B39DCCB16DE88EB00AE2A0A /* QuickImageContainer.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6BA8BFB816DE74F600056358 /* QuickImageContainer.h */; };
 		6B8828CA16EE893100A4F5AA /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B8828C916EE893100A4F5AA /* libc++.dylib */; };
 		6B980C1616EE85DA00F7DE7F /* NSMappedDictionary.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6BC5402C16EE796000A9664B /* NSMappedDictionary.h */; };
-		6BA0835916DE95D600927B3F /* NSImageContainerDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BA0835716DE95D600927B3F /* NSImageContainerDictionary.m */; };
-		6BA0835C16DE964200927B3F /* NSImageContainerDictionary.h in Headers */ = {isa = PBXBuildFile; fileRef = 6BA0835B16DE964200927B3F /* NSImageContainerDictionary.h */; };
-		6BA0835D16DE964200927B3F /* NSImageContainerDictionary.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6BA0835B16DE964200927B3F /* NSImageContainerDictionary.h */; };
+		6BA0835916DE95D600927B3F /* NSSharedCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BA0835716DE95D600927B3F /* NSSharedCollection.m */; };
+		6BA0835C16DE964200927B3F /* NSSharedCollection.h in Headers */ = {isa = PBXBuildFile; fileRef = 6BA0835B16DE964200927B3F /* NSSharedCollection.h */; };
+		6BA0835D16DE964200927B3F /* NSSharedCollection.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6BA0835B16DE964200927B3F /* NSSharedCollection.h */; };
 		6BA2665F16D4310E0065CA95 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BA2665E16D4310E0065CA95 /* Foundation.framework */; };
 		6BA2668516D433A60065CA95 /* QuickCollections.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6BA2666316D4310E0065CA95 /* QuickCollections.h */; };
 		6BA8BFBA16DE74F600056358 /* QuickImageContainer.h in Headers */ = {isa = PBXBuildFile; fileRef = 6BA8BFB816DE74F600056358 /* QuickImageContainer.h */; };
@@ -50,7 +50,7 @@
 				6B980C1616EE85DA00F7DE7F /* NSMappedDictionary.h in CopyFiles */,
 				6B39DCCB16DE88EB00AE2A0A /* QuickImageContainer.h in CopyFiles */,
 				6BA2668516D433A60065CA95 /* QuickCollections.h in CopyFiles */,
-				6BA0835D16DE964200927B3F /* NSImageContainerDictionary.h in CopyFiles */,
+				6BA0835D16DE964200927B3F /* NSSharedCollection.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,8 +58,8 @@
 
 /* Begin PBXFileReference section */
 		6B8828C916EE893100A4F5AA /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
-		6BA0835716DE95D600927B3F /* NSImageContainerDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSImageContainerDictionary.m; sourceTree = "<group>"; };
-		6BA0835B16DE964200927B3F /* NSImageContainerDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSImageContainerDictionary.h; sourceTree = "<group>"; };
+		6BA0835716DE95D600927B3F /* NSSharedCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSSharedCollection.m; sourceTree = "<group>"; };
+		6BA0835B16DE964200927B3F /* NSSharedCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSSharedCollection.h; sourceTree = "<group>"; };
 		6BA2665B16D4310E0065CA95 /* libQuickCollections.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libQuickCollections.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		6BA2665E16D4310E0065CA95 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6BA2666216D4310E0065CA95 /* QuickCollections-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "QuickCollections-Prefix.pch"; sourceTree = "<group>"; };
@@ -91,7 +91,6 @@
 		6BA2665016D4310E0065CA95 = {
 			isa = PBXGroup;
 			children = (
-				6B8828C916EE893100A4F5AA /* libc++.dylib */,
 				6BA2666016D4310E0065CA95 /* QuickCollections */,
 				6BA2665D16D4310E0065CA95 /* Frameworks */,
 				6BA2665C16D4310E0065CA95 /* Products */,
@@ -110,6 +109,7 @@
 		6BA2665D16D4310E0065CA95 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6B8828C916EE893100A4F5AA /* libc++.dylib */,
 				6BA8BFBC16DE78DD00056358 /* CoreGraphics.framework */,
 				6BA8BFBD16DE78DD00056358 /* UIKit.framework */,
 				6BA2665E16D4310E0065CA95 /* Foundation.framework */,
@@ -123,8 +123,8 @@
 				6BA2666316D4310E0065CA95 /* QuickCollections.h */,
 				6BA8BFB816DE74F600056358 /* QuickImageContainer.h */,
 				6BC2A9EF16E3C995003EAD4D /* QuickImageContainer.m */,
-				6BA0835B16DE964200927B3F /* NSImageContainerDictionary.h */,
-				6BA0835716DE95D600927B3F /* NSImageContainerDictionary.m */,
+				6BA0835B16DE964200927B3F /* NSSharedCollection.h */,
+				6BA0835716DE95D600927B3F /* NSSharedCollection.m */,
 				6BC5402C16EE796000A9664B /* NSMappedDictionary.h */,
 				6BC5402D16EE796000A9664B /* NSMappedDictionary.mm */,
 				6BC5403116EE79CA00A9664B /* NSMap.mm */,
@@ -150,7 +150,7 @@
 			files = (
 				6B39DCC916DE88E300AE2A0A /* QuickCollections.h in Headers */,
 				6BA8BFBA16DE74F600056358 /* QuickImageContainer.h in Headers */,
-				6BA0835C16DE964200927B3F /* NSImageContainerDictionary.h in Headers */,
+				6BA0835C16DE964200927B3F /* NSSharedCollection.h in Headers */,
 				6BC5402E16EE796000A9664B /* NSMappedDictionary.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -237,7 +237,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6BA0835916DE95D600927B3F /* NSImageContainerDictionary.m in Sources */,
+				6BA0835916DE95D600927B3F /* NSSharedCollection.m in Sources */,
 				6BC2A9F016E3C995003EAD4D /* QuickImageContainer.m in Sources */,
 				6BC5402F16EE796000A9664B /* NSMappedDictionary.mm in Sources */,
 			);
@@ -301,7 +301,10 @@
 				GCC_PREFIX_HEADER = "QuickCollections/QuickCollections-Prefix.pch";
 				GCC_THUMB_SUPPORT = NO;
 				HEADER_SEARCH_PATHS = "";
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LDFLAGS = (
+					"-all_load",
+					"-ObjC",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};
@@ -322,7 +325,10 @@
 				GCC_PREFIX_HEADER = "QuickCollections/QuickCollections-Prefix.pch";
 				GCC_THUMB_SUPPORT = NO;
 				HEADER_SEARCH_PATHS = "";
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LDFLAGS = (
+					"-all_load",
+					"-ObjC",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};

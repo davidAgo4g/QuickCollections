@@ -9,7 +9,6 @@
 #import <UIKit/UIKit.h>
 #import <CoreGraphics/CoreGraphics.h>
 #import <Foundation/Foundation.h>
-#import <libkern/OSAtomic.h>
 
 typedef struct _GSImagePixelData {
     
@@ -23,8 +22,14 @@ typedef struct _GSImagePixelData {
 
 @interface QuickImageContainer : NSObject  <NSCoding>
 
--(void)setImage:(UIImage *)anImage;
--(UIImage *)imageInContainer;
+@property (nonatomic, retain) UIImage *image;
+@property (nonatomic, readonly) NSData *data;
+
+-(id)initWithImage:(UIImage *)anImage;
+
+-(void)compress;
+-(void)uncompress;
+
 -(void)saveToFile:(NSString *)aPath;
 -(void)loadFromFile:(NSString *)aPath;
 
