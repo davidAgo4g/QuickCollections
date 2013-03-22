@@ -34,7 +34,8 @@ Assuming that you want to save a "QuickImageContainer" file, you can do it as fo
 		UIImage *myImage = [UIImage imageNamed:@"myImage.png"];
 		QuickImageContainer *container = [[QuickImageContainer alloc] init];
 		
-		[container setImage:myImage];   // now container holds an array of unsigned integers
+		[container setImage:myImage];
+           [container compress];   // now container holds an array of unsigned integers
 		
 		NSString* container_path = [[self documentPath] stringByAppendingPathComponent:@"data"];
 		[container saveToFile:container_path];
@@ -59,7 +60,7 @@ Assuming that you want to save a "QuickImageContainer" file, you can do it as fo
 		return [paths objectAtIndex:0];
 	}
 	
-By this way you have stored 10-20 bytes to file, which is much less than 1 KB. However, you can take advantage
+By this way you have stored only 10-20 bytes to file, much less than 1 KB. However, you can take advantage
  of NSKeyedArchiver / NSKeyedUnarchiver to save to a file and get back a QuickImageContainer object:
 
     -(void)viewDidLoad  {
@@ -68,8 +69,9 @@ By this way you have stored 10-20 bytes to file, which is much less than 1 KB. H
 		UIImage *myImage = [UIImage imageNamed:@"myImage.png"];
 		QuickImageContainer *container = [[QuickImageContainer alloc] init];
 		
-		[container setImage:myImage];   // now container holds an array of unsigned integers
-		
+		[container setImage:myImage];
+           [container compress];   // now container holds an array of unsigned integers		
+
 		NSString* container_path = [[self documentPath] stringByAppendingPathComponent:@"data.bin"];
 		[NSkeyedArchiever archiveRootObject:container toFile:container_path];
 		
@@ -84,12 +86,12 @@ By this way you have stored 10-20 bytes to file, which is much less than 1 KB. H
 		[v release];
 	}
 
-NSImageContainerDictionary - a thread-safe dictionary where you can add multiple images simultaneously
+NSSharedCollection - a thread-safe dictionary where you can add multiple images simultaneously
 ------------------------------------------------------------------------------------------------------
 
-"NSImageContainerDictionary" NSImageContainerDictionary is a simple class that makes use of a NSDictionary object accessible from any NSThead,
+ NSSharedCollection is a simple class that makes use of a NSDictionary object accessible from any NSThead,
  using some NSOperation objects to obtain the values. In fact, you can put multiple images simultaneously (it stores a "QuickImageContainer" 
- object in NSDictionary) using "-setImageInBackground:anImage ForKey:aKey" . Here's an example:
+ object in NSDictionary). Here's an example:
  
      -(void)viewDidLoad  {
 	    [super viewDidLoad];
@@ -101,19 +103,19 @@ NSImageContainerDictionary - a thread-safe dictionary where you can add multiple
 	-(void) saveImages  {
 	    NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
 	
-	    NSImageContainerDictionary *dictionary = [[[NSImageContainerDictionary alloc] init] autorelease];
+	    NSSharedCollection *collection = [[[NSSharedCollection alloc] init] autorelease];
 	    UIImage *myImage = [UIImage imageNamed:@"myImage.png"];
 		for(int i = 0; i < 100; ++i)  {  // 100 is a random number
-		    [dictionary setImage:myImage ForKey:[NSNumber numberWithInt:i]];
+		    [collection setImageInBackground:myImage ForKey:[NSNumber numberWithInt:i]];
 		}
-		[self performSelectorOnMainThread:@selector(addSubviewInMainView) withObject:nil waitUntilDone:YES];
+           [collection endUpInsertingImages];
+		[self performSelectorOnMainThread:@selector(addSubviewInMainView) withObject:collection waitUntilDone:YES];
 		
 		[pool release];
 	}
 	
-	-(void) addSubviewInMainView  {
-	    NSImageContainerDictionary *dictionary = [[[NSImageContainerDictionary alloc] init] autorelease];
-	    UIImageView *v = [[UIImageView alloc] initWithImage:[dictionary imageForKey:[NSNumber numberWithInt:0]]];
+	-(void) addSubviewInMainView:(NSSharedCollection *)aCollection  {
+           UIImageView *v = [[UIImageView alloc] initWithImage:[aCollection imageForKey:[NSNumber numberWithInt:0]]];
 		[self.view addSubview:v];
 		[v release];
 	}
