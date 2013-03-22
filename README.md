@@ -12,7 +12,8 @@ Yes, of course. "QuickImageContainer" conforms to the NSCoder protocol and anoth
 		UIImage *myImage = [UIImage imageNamed:@"myImage.png"];
 		QuickImageContainer *c = [[QuickImageContainer alloc] init];
 		
-		[c setImage:myImage];   // now c holds an array of unsigned integers
+		[c setImage:myImage];   // now container holds an image
+		[container compress];   // now container holds an array of unsigned integers
 		
 		myImage = [c imageInContainer];  // get back the image
 		
@@ -35,7 +36,7 @@ Assuming that you want to save a "QuickImageContainer" file, you can do it as fo
 		QuickImageContainer *container = [[QuickImageContainer alloc] init];
 		
 		[container setImage:myImage];
-           [container compress];   // now container holds an array of unsigned integers
+        [container compress];
 		
 		NSString* container_path = [[self documentPath] stringByAppendingPathComponent:@"data"];
 		[container saveToFile:container_path];
@@ -70,7 +71,7 @@ By this way you have stored only 10-20 bytes to file, much less than 1 KB. Howev
 		QuickImageContainer *container = [[QuickImageContainer alloc] init];
 		
 		[container setImage:myImage];
-           [container compress];   // now container holds an array of unsigned integers		
+           [container compress];
 
 		NSString* container_path = [[self documentPath] stringByAppendingPathComponent:@"data.bin"];
 		[NSkeyedArchiever archiveRootObject:container toFile:container_path];
